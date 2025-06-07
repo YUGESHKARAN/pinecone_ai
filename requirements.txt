@@ -3,9 +3,7 @@ flask
 flask-cors
 langchain
 langchain-core
-langchain-community
 langchain-groq
 langchain-huggingface
-langchain-pinecone
 sentence-transformers
 pinecone
