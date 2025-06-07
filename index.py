@@ -6,8 +6,6 @@ from langchain_groq import ChatGroq
 from langchain.vectorstores import Pinecone
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-# from langchain_community.vectorstores import Pinecone
-# from langchain_pinecone.vectorstores import Pinecone
 
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains.retrieval import create_retrieval_chain
@@ -27,11 +25,9 @@ CORS(app)
 pc = pinecone.Pinecone(api_key=PINECONE_API_KEY)
 
 pinecone_index = pc.Index(host='https://pdf-vector-db-3e6e42d.svc.aped-4627-b74a.pinecone.io')
-# Initialize the language model
+
 llm = ChatGroq(model="llama-3.1-8b-instant")
 
-# Define the prompt template
-# Define the prompt template
 prompt = ChatPromptTemplate.from_template(
     """
     Please provide the answer based on the given prompt.
@@ -50,16 +46,6 @@ text_key="text"
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 retriever = Pinecone(pinecone_index,embeddings.embed_query,text_key)
 
-# # Create a retrieval-based QA chain
-# retrieval_chain = RetrievalQA.from_chain_type(
-#     llm=llm,
-#     retriever=retriever.as_retriever(),
-#     chain_type="stuff",  # Combines documents with the query
-#     return_source_documents=True
-# )
-
-# # User input and query
-# text_key = "text"
 
 @app.route("/query",methods=['POST'])
 def handle_request():
