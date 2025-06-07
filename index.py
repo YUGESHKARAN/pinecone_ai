@@ -24,7 +24,7 @@ CORS(app)
 # Initialize Pinecone instance
 pc = pinecone.Pinecone(api_key=PINECONE_API_KEY)
 
-pinecone_index = pc.Index(host='https://pdf-vector-db-3e6e42d.svc.aped-4627-b74a.pinecone.io')
+pinecone_index = pc.Index(host='https://ai-knowledge-feed-3e6e42d.svc.aped-4627-b74a.pinecone.io')
 
 llm = ChatGroq(model="llama-3.1-8b-instant")
 
@@ -66,4 +66,4 @@ def handle_request():
 
 if __name__ == '__main__':
   port = int(os.environ.get("PORT", 4000))  # Default to 3000 if PORT is not set
-  app.run(host="0.0.0.0", port=port, debug=False)
+  app.run(host="0.0.0.0", port=4000, debug=False)
