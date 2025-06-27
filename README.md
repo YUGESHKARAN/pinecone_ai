@@ -28,6 +28,7 @@ The primary goal of this project is to enhance AI knowledge by allowing the inte
 Create a `.env` file in the root directory and add the following keys:
 ```env
 GROQ_API_KEY=your_groq_api_key
+HUGGINGFACE_API_KEY=your_huggingface_api_key
 PINECONE_API_KEY=your_pinecone_api_key
 ```
 
