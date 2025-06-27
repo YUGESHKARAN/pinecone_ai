@@ -85,5 +85,3 @@ This project is licensed under the MIT License.
 For questions or support, please contact [YUGESHKARAN](https://github.com/YUGESHKARAN).
 
 ---
-
-> **Note:** This project is in active development. Features and documentation may change.
